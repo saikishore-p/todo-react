@@ -1,4 +1,10 @@
-function TodoRowItem(props){
+import React from "react";
+
+function TodoRowItem(props: {
+    rowNumber: number, 
+    rowDescription: string, 
+    rowAssigned: string, 
+    deleteTodo: Function}){
 
     // const rowNumber =1;
     // const rowDescription = "Feed Dogg";
@@ -6,7 +12,7 @@ function TodoRowItem(props){
 
     //return should be only one component....so we cannot return two rows....instead we can return one div which has two rows
     return ( 
-        <tr onClick = {() => props.deleteTodo(props.rowNumber)}>
+        <tr onClick = {() => props.deleteTodo(props.rowNumber )}>
             <th scope='row'>{props.rowNumber}</th>
             <td>{props.rowDescription}</td>
             <td>{props.rowAssigned}</td>

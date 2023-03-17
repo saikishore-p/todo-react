@@ -17,7 +17,7 @@ function App() {
     {rowNumber: 4, rowDescription: 'Charge phone', rowAssigned: 'User One'}
   ])
 
-  const addTodo = (description, assigned) => {
+  const addTodo = (description: string, assigned: string) => {
     // console.log('our addTodo button has been clicked');
     let rowNumber = 0;
     if(todos.length > 0){
@@ -35,14 +35,12 @@ function App() {
       console.log(todos);
   }
 
-  const deleteTodo = (deleteTodoRowNumber) => {
+  const deleteTodo = (deleteTodoRowNumber: number) => {
     let filtered = todos.filter(function(value){
       return value.rowNumber !== deleteTodoRowNumber;
     });
     setTodos(filtered);
   }
-
-
 
   return (
     <div className='mt-5 container'>

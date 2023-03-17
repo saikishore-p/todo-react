@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 
-function NewTodoForm(props){
+function NewTodoForm(props: {addTodo: Function}){
 
     const [description, setDescription] = useState('');
     const [assigned, setAssigned] = useState('');
@@ -10,10 +10,10 @@ function NewTodoForm(props){
     //     setDescription(event.target.value);
     // }
 
-    const assignedChange = (event) => {
-        console.log('assigned', event.target.value);
-        setAssigned(event.target.value)
-    }
+    // const assignedChange = (event) => {
+    //     console.log('assigned', event.target.value);
+    //     setAssigned(event.target.value)
+    // }
 
     const submitTodo = () =>{
         if(description != '' && assigned != ''){
@@ -22,9 +22,6 @@ function NewTodoForm(props){
             setAssigned('');
         }
     }
-
-
-
     
     return (
         <div className='mt-5'>
@@ -35,7 +32,8 @@ function NewTodoForm(props){
                         type='text' 
                         className='form-control' 
                         required 
-                        onChange={assignedChange}
+                        // onChange={assignedChange}
+                        onChange={e=> setAssigned(e.target.value)}
                         value = {assigned}
                     ></input>
                 </div>
